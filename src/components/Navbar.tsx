@@ -1,19 +1,61 @@
+import { useState } from 'react';
 
-export default function Navbar() {
+const Navbar = () => {
+  // State to manage mobile menu visibility
+  const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
+
+  // Toggle mobile menu visibility
+  const toggleMobileMenu = () => {
+    setIsMobileMenuVisible(!isMobileMenuVisible);
+  };
+
   return (
-    <div className="bg-gray-900 w-screen h-[10%] p-4 flex justify-between content-center">
-        <div className="nav-left">
-            <h1 className="text-blue-600 font-bold text-xl">TODO APP</h1>
+    <>
+      <header className="w-screen h-28 bg-gray-950 backdrop-blur-md text-white flex justify-between items-center p-5 flex-nowrap border border-gray-600 border-b-[1px] border-t-0 border-r-0 border-l-0 sticky top-0 z-50">
+        <a className="text-xl font-bold text-white" href="/">
+          TODO
+        </a>
+        <div className="hamburger md:hidden text-2xl" onClick={toggleMobileMenu}>
+          <i className="ri-menu-line"></i>
         </div>
-        <div className="nav-bottom">
-            <ul className="flex gap-5 text-white">
-                <li className="text-lg font-semibold"><a href="#">Home</a></li>
-                <li className="text-lg font-semibold"><a href="#">Todo App</a></li>
-            </ul>
+        <div id="desktop" className="hidden md:flex md:justify-between gap-5 items-center">
+          <ul className="flex gap-9">
+            <li className="text-lg font-medium text-white hover:text-xounity-orange ease-in-out duration-500">
+              <a href="/">Home</a>
+            </li>
+            <li className="text-lg font-medium text-white hover:text-xounity-orange ease-in-out duration-500">
+              <a href="/todo">Todo List</a>
+            </li>
+          </ul>
+          <div>
+            <button className='border-2 border-xounity-orange px-5 py-2 rounded-md font-medium text-white ease-in-out duration-700 hover:bg-xounity-orange'>
+              <a href='/connect'>Connect</a>
+            </button>
+          </div>
         </div>
-        <div className="nav-right">
-            <button type="button" onClick={() => window.location.href = "#"} className="px-4 py-2 bg-yellow-400 rounded-md">Connect</button>
+      </header>
+      {isMobileMenuVisible && (
+        <div id="mobile" className="md:hidden fixed inset-0 bg-transparent backdrop-blur-lg text-white flex flex-col items-center justify-center z-50">
+          <div className="absolute top-5 right-5 text-2xl" onClick={toggleMobileMenu}>
+            <i className="ri-close-line"></i>
+          </div>
+          <ul className="flex flex-col items-center gap-4 p-4">
+            <li className="text-lg font-medium text-white hover:text-xounity-orange ease-in-out duration-500">
+              <a href="/">Home</a>
+            </li>
+            <li className="text-lg font-medium text-white hover:text-xounity-orange ease-in-out duration-500">
+              <a href="/todo">Todo List</a>
+            </li>
+          </ul>
+          <div>
+            <button className='border-2 border-xounity-orange px-5 py-2 rounded-md font-medium text-white ease-in-out duration-700 hover:bg-xounity-orange'>
+              <a href='/connect'>Connect</a>
+            </button>
+          </div>
         </div>
-    </div>
-  )
-}
+      )}
+    </>
+  );
+};
+
+export default Navbar;
