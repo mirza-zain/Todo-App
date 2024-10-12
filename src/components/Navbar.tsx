@@ -20,17 +20,19 @@ const Navbar = () => {
         </div>
         <div id="desktop" className="hidden md:flex md:justify-between gap-5 items-center">
           <ul className="flex gap-9">
-            <li className="text-lg font-medium text-white hover:text-xounity-orange ease-in-out duration-500">
+            <li className="text-lg font-medium text-white hover:text-orange-200 ease-in-out duration-500">
               <a href="/">Home</a>
             </li>
-            <li className="text-lg font-medium text-white hover:text-xounity-orange ease-in-out duration-500">
+            <li className="text-lg font-medium text-white hover:text-orange-200 ease-in-out duration-500">
               <a href="/todo">Todo List</a>
             </li>
           </ul>
           <div>
-            <button className='border-2 border-xounity-orange px-5 py-2 rounded-md font-medium text-white ease-in-out duration-700 hover:bg-xounity-orange'>
-              <a href='/connect'>Connect</a>
-            </button>
+            <a href='/connect'>
+              <button className='border-2 border-orange-200 px-5 py-2 rounded-md font-medium text-white ease-in-out duration-700 hover:bg-orange-500'>
+                Connect
+              </button>
+            </a>
           </div>
         </div>
       </header>
@@ -40,17 +42,19 @@ const Navbar = () => {
             <i className="ri-close-line"></i>
           </div>
           <ul className="flex flex-col items-center gap-4 p-4">
-            <li className="text-lg font-medium text-white hover:text-xounity-orange ease-in-out duration-500">
+            <li className="text-lg font-medium text-white hover:text-orange-200 ease-in-out duration-500">
               <a href="/">Home</a>
             </li>
-            <li className="text-lg font-medium text-white hover:text-xounity-orange ease-in-out duration-500">
+            <li className="text-lg font-medium text-white hover:text-orange-200 ease-in-out duration-500">
               <a href="/todo">Todo List</a>
             </li>
           </ul>
           <div>
-            <button className='border-2 border-xounity-orange px-5 py-2 rounded-md font-medium text-white ease-in-out duration-700 hover:bg-xounity-orange'>
-              <a href='/connect'>Connect</a>
-            </button>
+            <a href='/connect'>
+              <button className='border-2 border-orange-200 px-5 py-2 rounded-md font-medium text-white ease-in-out duration-700 hover:bg-orange-500'>
+                Connect
+              </button>
+            </a>
           </div>
         </div>
       )}
